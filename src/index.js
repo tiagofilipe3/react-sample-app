@@ -1,14 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './setup/serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import { IntlProvider } from "react-intl";
+import { ptBr } from "./assets/i18nMessages/pt-BR";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <IntlProvider locale="pt-BR" defaultLocale={"pt-BR"} messages={ptBr}>
+      <App />
+    </IntlProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
