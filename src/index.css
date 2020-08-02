@@ -45,3 +45,8 @@ code {
   font-family: QS-Bold;
   src: url(./assets/fonts/Quicksand-Bold.ttf);
 }
+
+@font-face {
+  font-family: Avenir-Heavy;
+  src: url(./assets/fonts/AvenirHeavy.ttf);
+}

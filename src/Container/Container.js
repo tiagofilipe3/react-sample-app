@@ -15,6 +15,9 @@ const Container = styled.div`
   align-items: ${({ alignItems }) => alignItems && alignItems};
   justify-content: ${({ justifyContent }) => justifyContent && justifyContent};
   background: ${({ background }) => background && background};
+  flex: ${({ flex }) => flex && flex};
+  flex-grow: ${({ flexGrow }) => flexGrow && flexGrow};
+  flex-shrink: ${({ flexShrink }) => flexShrink && flexShrink};
 `;
 
 Container.propTypes = {
@@ -24,6 +27,9 @@ Container.propTypes = {
   alignItems: PropTypes.string,
   justifyContent: PropTypes.string,
   background: PropTypes.string,
+  flex: PropTypes.string,
+  flexGrow: PropTypes.string,
+  flexShrink: PropTypes.string,
 };
 
 Container.defaultProps = {
@@ -33,6 +39,9 @@ Container.defaultProps = {
   alignItems: undefined,
   justifyContent: undefined,
   background: undefined,
+  flex: undefined,
+  flexGrow: undefined,
+  flexShrink: undefined,
 };
 
 export default Container;

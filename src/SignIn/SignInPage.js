@@ -3,6 +3,7 @@ import Container from "../Container";
 import AutoRotatingCarousel from "../ZapptsCarousel/AutoRotatingCarousel";
 import Slide from "../ZapptsCarousel/Slide";
 import PeopleAndGraphs from "../PeopleAndGraphs";
+import FormattedText from "../FormattedText/FormattedText";
 
 const SignInPage = () => {
   return (
@@ -44,7 +45,34 @@ const SignInPage = () => {
           </AutoRotatingCarousel>
         </Container>
       </Container>
-      <Container wd="50%" ht="100%" />
+      <Container wd="50%" ht="100%" column>
+        <Container flex="1 0 0%" justifyContent="flex-end" alignItems="center">
+          <FormattedText
+            size="xxl"
+            textId="invision"
+            marginTop="120px"
+            marginRight="124px"
+            fontFamily="Avenir-Heavy"
+            color="secondary-dark-text"
+          />
+        </Container>
+        <Container
+          flex="9 0 0%"
+          justifyContent="flex-start"
+          alignItems="center"
+          column
+        >
+          <FormattedText
+            textId="welcomeToInvision"
+            size="xl"
+            fontFamily="QS-Medium"
+            marginTop="73px"
+          />
+          <Container column marginTop="87px">
+            Form
+          </Container>
+        </Container>
+      </Container>
     </>
   );
 };

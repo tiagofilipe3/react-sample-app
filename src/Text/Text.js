@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import PropTypes from "prop-types";
 import colors from "../assets/colors";
 import {
   margins,
@@ -11,6 +10,7 @@ import {
   dimensionsDefaultProps,
   dimensionsPropTypes,
 } from "../Container/dimensions";
+import { textDefaultProps, textProps } from "./textProps";
 
 const Text = styled.div`
   font-size: ${({ size }) =>
@@ -34,19 +34,13 @@ const Text = styled.div`
 `;
 
 Text.propTypes = {
-  size: PropTypes.string,
-  color: PropTypes.string,
-  fontFamily: PropTypes.string,
-  textAlign: PropTypes.string,
+  ...textProps,
   ...marginsPropTypes,
   ...dimensionsPropTypes,
 };
 
 Text.defaultProps = {
-  size: undefined,
-  color: undefined,
-  fontFamily: undefined,
-  textAlign: undefined,
+  ...textDefaultProps,
   ...marginsDefaultProps,
   ...dimensionsDefaultProps,
 };
