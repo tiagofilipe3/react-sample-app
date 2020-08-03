@@ -8,8 +8,8 @@ const Slide = (props) => {
   const { media, subtitle, title } = props;
 
   return (
-    <>
-      {media}
+    <Container column>
+      <Container justifyContent="center">{media}</Container>
       <Container column alignItems="center">
         <Text
           size="xl"
@@ -29,7 +29,7 @@ const Slide = (props) => {
           <FormattedMessage id={subtitle} />
         </Text>
       </Container>
-    </>
+    </Container>
   );
 };
 

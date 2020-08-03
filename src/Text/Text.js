@@ -11,21 +11,10 @@ import {
   dimensionsPropTypes,
 } from "../Container/dimensions";
 import { textDefaultProps, textProps } from "./textProps";
+import { sizes } from "./sizes";
 
 const Text = styled.div`
-  font-size: ${({ size }) =>
-    (() => {
-      const sizes = {
-        xxl: "35px",
-        xl: "30px",
-        l: "20px",
-        s: "18px",
-        xs: "16px",
-        xxs: "14px",
-      };
-
-      return sizes[size] || sizes["s"];
-    })()};
+  font-size: ${({ size }) => (() => sizes[size] || sizes["s"])()};
   color: ${({ color }) => colors[color] || colors["primary-dark-text"]};
   font-family: ${({ fontFamily }) => fontFamily || "QS-Regular"};
   text-align: ${({ textAlign }) => textAlign && textAlign};

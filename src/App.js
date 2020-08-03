@@ -1,11 +1,8 @@
-import React from 'react';
-import './App.css';
+import React from "react";
 import SignInPage from "./SignIn/SignInPage";
 
 const App = () => {
-  return (
-    <SignInPage />
-  );
-}
+  return <SignInPage />;
+};
 
 export default App;

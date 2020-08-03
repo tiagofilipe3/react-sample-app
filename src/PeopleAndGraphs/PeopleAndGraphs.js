@@ -1,11 +1,15 @@
-import styled from "@emotion/styled";
 import PeopleAndGraphsImg from "../assets/images/PeopleAndGraphs.png";
+import React from "react";
 
-const PeopleAndGraphs = styled.div`
-  height: 555px;
-  background: url(${PeopleAndGraphsImg}) no-repeat 50%;
-  opacity: 1;
-  margin-top: 112px;
-`;
+const imgStyles = {
+  width: "44em",
+  marginTop: "112px",
+  maxWidth: "100%",
+  height: "auto",
+};
+
+const PeopleAndGraphs = () => (
+  <img src={PeopleAndGraphsImg} alt="People with graphs" style={imgStyles} />
+);
 
 export default PeopleAndGraphs;

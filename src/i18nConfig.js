@@ -1,6 +1,6 @@
-import { ptBr } from "./assets/i18nMessages/pt-BR";
+import { enUS } from "./assets/i18nMessages/en-US";
 
 export const i18nConfig = {
   locale: "pt-BR",
-  messages: ptBr,
+  messages: enUS,
 };

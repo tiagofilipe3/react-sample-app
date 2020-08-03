@@ -1,6 +1,5 @@
-import React from "react";
-import { ErrorMessage, Form, Formik } from "formik";
-import * as yup from "yup";
+import React, { useState } from "react";
+import { Form, Formik } from "formik";
 
 import { ReactComponent as GoogleIcon } from "../assets/images/google_logo.svg";
 import Container from "../Container";
@@ -12,13 +11,9 @@ import { FormikTextField } from "../FormikTextField/FormikTextField";
 import Button from "@material-ui/core/Button";
 import Line from "../Line/Line";
 import colors from "../assets/colors";
-
-let loginSchema = yup.object().shape({
-  username: yup.string().required(),
-  password: yup.string().required(),
-});
-
-const errorStyles = { fontFamily: "QS-Regular", marginTop: 5 };
+import CreateAccountLink from "../CreateAccountLink";
+import LoginLink from "../LoginLink";
+import TermsLink from "../TermsLink";
 
 const signInWithGoogleStyles = {
   backgroundColor: colors["primary-text"],
@@ -28,46 +23,47 @@ const signInWithGoogleStyles = {
 };
 
 const SignInPage = () => {
+  const [signUp, setSignUp] = useState(false);
+
   return (
     <>
       <Container
         background={`#A9C5BA 0% 0% no-repeat padding-box;`}
+        flex={1}
         wd="50%"
         ht="100%"
         justifyContent="center"
         column
       >
-        <Container column ht="100%" alignItems="center">
-          <AutoRotatingCarousel label="Get started" autoplay={false}>
-            <Slide
-              media={<PeopleAndGraphs />}
-              title="image.title"
-              subtitle="image.title2"
-            />
-            <Slide
-              media={<PeopleAndGraphs />}
-              title="image.title"
-              subtitle="image.title2"
-            />
-            <Slide
-              media={<PeopleAndGraphs />}
-              title="image.title"
-              subtitle="image.title2"
-            />
-            <Slide
-              media={<PeopleAndGraphs />}
-              title="image.title"
-              subtitle="image.title2"
-            />
-            <Slide
-              media={<PeopleAndGraphs />}
-              title="image.title"
-              subtitle="image.title2"
-            />
-          </AutoRotatingCarousel>
-        </Container>
+        <AutoRotatingCarousel label="Get started" autoplay>
+          <Slide
+            media={<PeopleAndGraphs />}
+            title="image.title"
+            subtitle="image.title2"
+          />
+          <Slide
+            media={<PeopleAndGraphs />}
+            title="image.title"
+            subtitle="image.title2"
+          />
+          <Slide
+            media={<PeopleAndGraphs />}
+            title="image.title"
+            subtitle="image.title2"
+          />
+          <Slide
+            media={<PeopleAndGraphs />}
+            title="image.title"
+            subtitle="image.title2"
+          />
+          <Slide
+            media={<PeopleAndGraphs />}
+            title="image.title"
+            subtitle="image.title2"
+          />
+        </AutoRotatingCarousel>
       </Container>
-      <Container wd="50%" ht="100%" column>
+      <Container flex={1} ht="100%" column>
         <Container flex="1 0 0%" justifyContent="flex-end" alignItems="center">
           <FormattedText
             size="xxl"
@@ -83,40 +79,66 @@ const SignInPage = () => {
           justifyContent="flex-start"
           alignItems="center"
           column
+          paddingLeft="25px"
+          paddingRight="25px"
         >
           <FormattedText
-            textId="welcomeToInvision"
+            textId={signUp ? "gettingStarted" : "welcomeToInvision"}
             size="xl"
             fontFamily="QS-Medium"
-            marginTop="73px"
+            marginTop={signUp ? "30px" : "73px"}
           />
-          <Container column marginTop="85px">
+          <Container column marginTop={signUp ? "20px" : "55px"}>
             <Formik
-              validationSchema={loginSchema}
+              enableReinitialize
+              validateOnChange={false}
               initialValues={{
+                fullname: "",
                 username: "",
                 password: "",
               }}
-              onSubmit={(values, { setSubmitting }) => {
+              validate={(values) => {
+                if (signUp && !values.fullname) {
+                  return { fullname: "Fullname is required" };
+                }
+
+                if (!values.username) {
+                  return { username: "Username is required" };
+                }
+
+                if (!values.password) {
+                  return { password: "Password is required" };
+                }
+              }}
+              onSubmit={(values, { setSubmitting, resetForm }) => {
                 setSubmitting(true);
                 setTimeout(() => {
-                  alert(JSON.stringify(values));
+                  if (signUp) {
+                    alert("User created! :)");
+                  } else {
+                    alert("User logged! :)");
+                  }
+
                   setSubmitting(false);
+                  resetForm();
                 }, 400);
               }}
             >
               {({ isSubmitting }) => (
                 <Form>
                   <Container column>
-                    <Container column>
+                    {signUp && (
+                      <Container column>
+                        <FormikTextField
+                          formikKey="fullname"
+                          label="Full name"
+                        />
+                      </Container>
+                    )}
+                    <Container column marginTop="30px">
                       <FormikTextField
-                        formikKey="email"
+                        formikKey="username"
                         label="Username or email"
-                      />
-                      <ErrorMessage
-                        name="username"
-                        component="div"
-                        style={errorStyles}
                       />
                     </Container>
                     <Container column marginTop="30px">
@@ -125,21 +147,18 @@ const SignInPage = () => {
                         label="Password"
                         type="password"
                       />
-                      <ErrorMessage
-                        name="password"
-                        component="div"
-                        style={errorStyles}
-                      />
                     </Container>
                   </Container>
-                  <Container justifyContent="flex-end" marginTop="18px">
-                    <FormattedText
-                      textId="forgotPassword"
-                      fontFamily="QS-Regular"
-                      color="#707070"
-                      size="xxs"
-                    />
-                  </Container>
+                  {!signUp && (
+                    <Container justifyContent="flex-end" marginTop="18px">
+                      <FormattedText
+                        textId="forgotPassword"
+                        fontFamily="QS-Regular"
+                        color="#707070"
+                        size="xxs"
+                      />
+                    </Container>
+                  )}
                   <Container justifyContent="center" marginTop="30px">
                     <Button
                       type="submit"
@@ -153,7 +172,7 @@ const SignInPage = () => {
                       <FormattedText
                         color="primary-text"
                         size="xs"
-                        textId="signIn"
+                        textId={signUp ? "signUp" : "signIn"}
                         fontFamily="QS-Medium"
                         textTransform="capitalize"
                       />
@@ -174,44 +193,23 @@ const SignInPage = () => {
                     <Line width="150px" />
                   </Container>
                   <Container marginTop="40px" justifyContent="center">
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      style={signInWithGoogleStyles}
-                    >
+                    <Button style={signInWithGoogleStyles}>
                       <GoogleIcon style={{ marginRight: 20 }} />
                       <FormattedText
                         color="secondary-dark-text"
                         size="s"
-                        textId="signWithGoogle"
+                        textId={signUp ? "signUpGoogle" : "signWithGoogle"}
                         fontFamily="Lato-Regular"
                         textTransform="initial"
                       />
                     </Button>
                   </Container>
-                  <Container
-                    marginTop="40px"
-                    justifyContent="center"
-                    alignItems="center"
-                  >
-                    <FormattedText
-                      textId="newTo"
-                      size="xxs"
-                      style={{ whiteSpace: "break-spaces" }}
-                    />
-                    <FormattedText
-                      textId="invision_"
-                      size="xxs"
-                      fontWeight="bold"
-                      marginRight="3px"
-                    />
-                    <FormattedText
-                      textId="createAccount"
-                      size="xs"
-                      color="primary"
-                      style={{ textDecoration: "underline", cursor: "pointer" }}
-                    />
-                  </Container>
+                  <TermsLink show={signUp} />
+                  <CreateAccountLink
+                    show={!signUp}
+                    createAccount={() => setSignUp(true)}
+                  />
+                  <LoginLink show={signUp} login={() => setSignUp(false)} />
                 </Form>
               )}
             </Formik>

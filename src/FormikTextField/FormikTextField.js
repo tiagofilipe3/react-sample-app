@@ -10,8 +10,8 @@ export const FormikTextField = ({ formikKey, ...props }) => {
     <TextField
       id={field.name}
       name={field.name}
-      helperText={meta.touched ? meta.error : ""}
-      error={meta.touched && meta.error}
+      helperText={meta.error || ""}
+      error={!!meta.error}
       value={field.value}
       onChange={field.onChange}
       style={{ fontFamily: "QS-Regular", width: 433 }}

@@ -1,6 +1,13 @@
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
-import { margins, marginsDefaultProps, marginsPropTypes } from "./margins";
+import {
+  margins,
+  marginsDefaultProps,
+  marginsPropTypes,
+  paddings,
+  paddingsDefaultProps,
+  paddingsPropTypes,
+} from "./margins";
 import {
   dimensions,
   dimensionsDefaultProps,
@@ -9,6 +16,7 @@ import {
 
 const Container = styled.div`
   ${margins}
+  ${paddings}
   ${dimensions}
   display: flex;
   flex-direction: ${({ column }) => (column ? "column" : "row")};
@@ -22,6 +30,7 @@ const Container = styled.div`
 
 Container.propTypes = {
   ...marginsPropTypes,
+  ...paddingsPropTypes,
   ...dimensionsPropTypes,
   column: PropTypes.bool,
   alignItems: PropTypes.string,
@@ -34,6 +43,7 @@ Container.propTypes = {
 
 Container.defaultProps = {
   ...marginsDefaultProps,
+  ...paddingsDefaultProps,
   ...dimensionsDefaultProps,
   column: false,
   alignItems: undefined,

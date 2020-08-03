@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { IntlProvider } from "react-intl";
-import { ptBr } from "./assets/i18nMessages/pt-BR";
+import { enUS } from "./assets/i18nMessages/en-US";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
 
 const theme = createMuiTheme({
@@ -35,7 +35,7 @@ const theme = createMuiTheme({
 ReactDOM.render(
   <React.StrictMode>
     <MuiThemeProvider theme={theme}>
-      <IntlProvider locale="pt-BR" defaultLocale={"pt-BR"} messages={ptBr}>
+      <IntlProvider locale="en-US" defaultLocale={"en-US"} messages={enUS}>
         <App />
       </IntlProvider>
     </MuiThemeProvider>

@@ -4,6 +4,7 @@ import Carousel from "../SwipableCarouselView";
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
 import Dots from "../Dots";
+import Container from "../../Container";
 
 const styles = {
   root: {
@@ -135,12 +136,14 @@ const AutoRotatingCarousel = (props) => {
       >
         {React.Children.map(children, (c) => c)}
       </Carousel>
-      <Dots
-        count={children.length}
-        index={modulo(slideIndex, children.length)}
-        style={{ padding: "0px 0 100px" }}
-        onDotClick={handleChange}
-      />
+      <Container justifyContent="center">
+        <Dots
+          count={children.length}
+          index={modulo(slideIndex, children.length)}
+          style={{ paddingBottom: "10%" }}
+          onDotClick={handleChange}
+        />
+      </Container>
     </>
   );
 };
