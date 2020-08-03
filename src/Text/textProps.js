@@ -5,6 +5,8 @@ export const textProps = {
   color: PropTypes.string,
   fontFamily: PropTypes.string,
   textAlign: PropTypes.string,
+  textTransform: PropTypes.string,
+  fontWeight: PropTypes.string,
 };
 
 export const textDefaultProps = {
@@ -12,4 +14,6 @@ export const textDefaultProps = {
   color: undefined,
   fontFamily: undefined,
   textAlign: undefined,
+  textTransform: undefined,
+  fontWeight: undefined,
 };

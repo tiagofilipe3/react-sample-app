@@ -50,3 +50,8 @@ code {
   font-family: Avenir-Heavy;
   src: url(./assets/fonts/AvenirHeavy.ttf);
 }
+
+@font-face {
+  font-family: Lato-Regular;
+  src: url(./assets/fonts/Lato-Regular.ttf);
+}

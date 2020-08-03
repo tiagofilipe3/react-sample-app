@@ -29,6 +29,8 @@ const Text = styled.div`
   color: ${({ color }) => colors[color] || colors["primary-dark-text"]};
   font-family: ${({ fontFamily }) => fontFamily || "QS-Regular"};
   text-align: ${({ textAlign }) => textAlign && textAlign};
+  text-transform: ${({ textTransform }) => textTransform && textTransform};
+  font-weight: ${({ fontWeight }) => fontWeight && fontWeight};
   ${margins}
   ${dimensions}
 `;
