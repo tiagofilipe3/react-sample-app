@@ -1,6 +1,6 @@
 ## Zappts ReactJS Challenge 🚀
 
-To run use `npm install` then `npm start`
+To run use `yarn` then `yarn start`
 
 Coded using:
 
