@@ -1,4 +1,4 @@
-## Zappts ReactJS Challenge 🚀
+## Sample ReactJS App 🚀
 
 To run use `yarn` then `yarn start`
 
