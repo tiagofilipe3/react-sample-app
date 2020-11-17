@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 export const textProps = {
   size: PropTypes.string,
@@ -7,7 +7,7 @@ export const textProps = {
   textAlign: PropTypes.string,
   textTransform: PropTypes.string,
   fontWeight: PropTypes.string,
-};
+}
 
 export const textDefaultProps = {
   size: undefined,
@@ -16,4 +16,4 @@ export const textDefaultProps = {
   textAlign: undefined,
   textTransform: undefined,
   fontWeight: undefined,
-};
+}

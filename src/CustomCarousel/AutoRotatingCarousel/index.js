@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { modulo } from "../utils/modulo";
-import Carousel from "../SwipableCarouselView";
-import withStyles from "@material-ui/core/styles/withStyles";
-import PropTypes from "prop-types";
-import Dots from "../Dots";
-import Container from "../../Container";
+import React, { useState } from "react"
+import { modulo } from "../../utils/modulo"
+import Carousel from "../SwipableCarouselView"
+import withStyles from "@material-ui/core/styles/withStyles"
+import PropTypes from "prop-types"
+import Dots from "../Dots"
+import Container from "../../Container"
 
 const styles = {
   root: {
@@ -97,10 +97,10 @@ const styles = {
     height: "100%",
   },
   closed: {},
-};
+}
 
 const AutoRotatingCarousel = (props) => {
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0)
   const {
     onChange,
     autoplay,
@@ -108,20 +108,20 @@ const AutoRotatingCarousel = (props) => {
     classes,
     containerStyle,
     interval,
-  } = props;
+  } = props
 
-  const hasMultipleChildren = children.length != null;
+  const hasMultipleChildren = children.length != null
 
   const handleChange = (slideIndex) => {
-    setSlideIndex(slideIndex);
-    onChangeSlide(slideIndex);
-  };
+    setSlideIndex(slideIndex)
+    onChangeSlide(slideIndex)
+  }
 
   const onChangeSlide = (slideIndex) => {
     if (onChange) {
-      onChange(modulo(slideIndex, children.length));
+      onChange(modulo(slideIndex, children.length))
     }
-  };
+  }
 
   return (
     <>
@@ -145,15 +145,15 @@ const AutoRotatingCarousel = (props) => {
         />
       </Container>
     </>
-  );
-};
+  )
+}
 
 AutoRotatingCarousel.defaultProps = {
   autoplay: false,
   classes: undefined,
   containerStyle: undefined,
   interval: undefined,
-};
+}
 
 AutoRotatingCarousel.propTypes = {
   onChange: PropTypes.func,
@@ -162,6 +162,6 @@ AutoRotatingCarousel.propTypes = {
   classes: PropTypes.object,
   containerStyle: PropTypes.object,
   interval: PropTypes.number,
-};
+}
 
-export default withStyles(styles)(AutoRotatingCarousel);
+export default withStyles(styles)(AutoRotatingCarousel)

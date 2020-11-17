@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import Paper from "@material-ui/core/Paper";
-import withStyles from "@material-ui/core/styles/withStyles";
+import React, { useEffect, useState } from "react"
+import PropTypes from "prop-types"
+import Paper from "@material-ui/core/Paper"
+import withStyles from "@material-ui/core/styles/withStyles"
 
 const styles = {
   dots: {
@@ -29,25 +29,25 @@ const styles = {
     transition: "all 400ms cubic-bezier(0.4, 0.0, 0.2, 1)",
     borderRadius: 10,
   },
-};
+}
 
 const Dots = (props) => {
-  const [previousIndex, setPreviousIndex] = useState(props.index || 0);
-  const { classes, count, index, style = {}, onDotClick, ...other } = props;
+  const [previousIndex, setPreviousIndex] = useState(props.index || 0)
+  const { classes, count, index, style = {}, onDotClick, ...other } = props
 
   useEffect(() => {
     if (previousIndex !== index) {
       setTimeout(() => {
-        setPreviousIndex(index);
-      }, 400);
+        setPreviousIndex(index)
+      }, 400)
     }
-  }, [index]);
+  }, [index])
 
   const handleDotClick = (index, event) => {
     if (onDotClick) {
-      onDotClick(index, event);
+      onDotClick(index, event)
     }
-  };
+  }
 
   return (
     <div style={{ ...style, width: count * 24 }} {...other}>
@@ -87,8 +87,8 @@ const Dots = (props) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
 Dots.propTypes = {
   count: PropTypes.number.isRequired,
@@ -96,6 +96,6 @@ Dots.propTypes = {
   style: PropTypes.object,
   onDotClick: PropTypes.func,
   classes: PropTypes.object,
-};
+}
 
-export default withStyles(styles)(Dots);
+export default withStyles(styles)(Dots)

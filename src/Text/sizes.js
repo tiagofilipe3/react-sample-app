@@ -5,4 +5,4 @@ export const sizes = {
   s: "18px",
   xs: "16px",
   xxs: "14px",
-};
+}

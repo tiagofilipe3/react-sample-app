@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import { Form, Formik } from "formik";
+import React, { useState } from "react"
+import { Form, Formik } from "formik"
 
-import { ReactComponent as GoogleIcon } from "../assets/images/google_logo.svg";
-import Container from "../Container";
-import AutoRotatingCarousel from "../ZapptsCarousel/AutoRotatingCarousel";
-import Slide from "../ZapptsCarousel/Slide";
-import PeopleAndGraphs from "../PeopleAndGraphs";
-import FormattedText from "../FormattedText/FormattedText";
-import { FormikTextField } from "../FormikTextField/FormikTextField";
-import Button from "@material-ui/core/Button";
-import Line from "../Line/Line";
-import colors from "../assets/colors";
-import CreateAccountLink from "../CreateAccountLink";
-import LoginLink from "../LoginLink";
-import TermsLink from "../TermsLink";
+import { ReactComponent as GoogleIcon } from "../assets/images/google_logo.svg"
+import Container from "../Container"
+import AutoRotatingCarousel from "../CustomCarousel/AutoRotatingCarousel"
+import Slide from "../CustomCarousel/Slide"
+import PeopleAndGraphs from "../PeopleAndGraphs"
+import FormattedText from "../FormattedText"
+import FormikTextField from "../FormikTextField"
+import Button from "@material-ui/core/Button"
+import Line from "../Line"
+import colors from "../assets/colors"
+import CreateAccountLink from "../CreateAccountLink"
+import LoginLink from "../LoginLink"
+import TermsLink from "../TermsLink"
 
 const signInWithGoogleStyles = {
   backgroundColor: colors["primary-text"],
   padding: "8px 32px",
   borderRadius: "100px",
   boxShadow: "0px 3px 6px #00000029",
-};
+}
 
 const SignInPage = () => {
-  const [signUp, setSignUp] = useState(false);
+  const [signUp, setSignUp] = useState(false)
 
   return (
     <>
@@ -99,29 +99,29 @@ const SignInPage = () => {
               }}
               validate={(values) => {
                 if (signUp && !values.fullname) {
-                  return { fullname: "Fullname is required" };
+                  return { fullname: "Fullname is required" }
                 }
 
                 if (!values.username) {
-                  return { username: "Username is required" };
+                  return { username: "Username is required" }
                 }
 
                 if (!values.password) {
-                  return { password: "Password is required" };
+                  return { password: "Password is required" }
                 }
               }}
               onSubmit={(values, { setSubmitting, resetForm }) => {
-                setSubmitting(true);
+                setSubmitting(true)
                 setTimeout(() => {
                   if (signUp) {
-                    alert("User created! :)");
+                    alert("User created! :)")
                   } else {
-                    alert("User logged! :)");
+                    alert("User logged! :)")
                   }
 
-                  setSubmitting(false);
-                  resetForm();
-                }, 400);
+                  setSubmitting(false)
+                  resetForm()
+                }, 400)
               }}
             >
               {({ isSubmitting }) => (
@@ -217,7 +217,7 @@ const SignInPage = () => {
         </Container>
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default SignInPage;
+export default SignInPage

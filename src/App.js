@@ -1,8 +1,8 @@
-import React from "react";
-import SignInPage from "./SignIn/SignInPage";
+import React from "react"
+import SignInPage from "./SignIn"
 
 const App = () => {
-  return <SignInPage />;
-};
+  return <SignInPage />
+}
 
-export default App;
+export default App

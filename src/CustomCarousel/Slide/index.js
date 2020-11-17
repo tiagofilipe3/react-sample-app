@@ -1,11 +1,11 @@
-import React from "react";
-import Text from "../../Text";
-import Container from "../../Container";
-import PropTypes from "prop-types";
-import { FormattedMessage } from "react-intl";
+import React from "react"
+import Text from "../../Text"
+import Container from "../../Container"
+import PropTypes from "prop-types"
+import { FormattedMessage } from "react-intl"
 
 const Slide = (props) => {
-  const { media, subtitle, title } = props;
+  const { media, subtitle, title } = props
 
   return (
     <Container column>
@@ -30,18 +30,18 @@ const Slide = (props) => {
         </Text>
       </Container>
     </Container>
-  );
-};
+  )
+}
 
 Slide.defaultProps = {
   subtitle: "",
   title: "",
-};
+}
 
 Slide.propTypes = {
   media: PropTypes.node.isRequired,
   subtitle: PropTypes.string,
   title: PropTypes.string,
-};
+}
 
-export default Slide;
+export default Slide

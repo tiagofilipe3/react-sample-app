@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import PropTypes from "prop-types";
+import styled from "@emotion/styled"
+import PropTypes from "prop-types"
 import {
   margins,
   marginsDefaultProps,
@@ -7,12 +7,12 @@ import {
   paddings,
   paddingsDefaultProps,
   paddingsPropTypes,
-} from "./margins";
+} from "./margins"
 import {
   dimensions,
   dimensionsDefaultProps,
   dimensionsPropTypes,
-} from "./dimensions";
+} from "./dimensions"
 
 const Container = styled.div`
   ${margins}
@@ -26,7 +26,7 @@ const Container = styled.div`
   flex: ${({ flex }) => flex && flex};
   flex-grow: ${({ flexGrow }) => flexGrow && flexGrow};
   flex-shrink: ${({ flexShrink }) => flexShrink && flexShrink};
-`;
+`
 
 Container.propTypes = {
   ...marginsPropTypes,
@@ -39,7 +39,7 @@ Container.propTypes = {
   flex: PropTypes.string,
   flexGrow: PropTypes.string,
   flexShrink: PropTypes.string,
-};
+}
 
 Container.defaultProps = {
   ...marginsDefaultProps,
@@ -52,6 +52,6 @@ Container.defaultProps = {
   flex: undefined,
   flexGrow: undefined,
   flexShrink: undefined,
-};
+}
 
-export default Container;
+export default Container

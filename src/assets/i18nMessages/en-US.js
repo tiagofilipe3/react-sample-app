@@ -20,4 +20,4 @@ export const enUS = {
   privacyPolicy: "Privacy Policy",
   and_: " and ",
   gettingStarted: "Getting Started",
-};
+}

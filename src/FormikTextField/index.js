@@ -1,10 +1,10 @@
-import React from "react";
-import { useField } from "formik";
-import { TextField } from "@material-ui/core";
-import PropTypes from "prop-types";
+import React from "react"
+import { useField } from "formik"
+import { TextField } from "@material-ui/core"
+import PropTypes from "prop-types"
 
-export const FormikTextField = ({ formikKey, ...props }) => {
-  const [field, meta] = useField(formikKey);
+const FormikTextField = ({ formikKey, ...props }) => {
+  const [field, meta] = useField(formikKey)
 
   return (
     <TextField
@@ -17,13 +17,15 @@ export const FormikTextField = ({ formikKey, ...props }) => {
       style={{ fontFamily: "QS-Regular", width: 433 }}
       {...props}
     />
-  );
-};
+  )
+}
 
 FormikTextField.defaultProps = {
   formikKey: undefined,
-};
+}
 
 FormikTextField.propTypes = {
   formikKey: PropTypes.string,
-};
+}
+
+export default FormikTextField

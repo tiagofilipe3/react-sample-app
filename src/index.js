@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import { IntlProvider } from "react-intl";
-import { enUS } from "./assets/i18nMessages/en-US";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
+import React from "react"
+import ReactDOM from "react-dom"
+import "./index.css"
+import App from "./App"
+import { IntlProvider } from "react-intl"
+import { enUS } from "./assets/i18nMessages/en-US"
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core"
 
 const theme = createMuiTheme({
   typography: {
@@ -30,7 +30,7 @@ const theme = createMuiTheme({
       },
     },
   },
-});
+})
 
 ReactDOM.render(
   <React.StrictMode>
@@ -41,4 +41,4 @@ ReactDOM.render(
     </MuiThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
-);
+)
