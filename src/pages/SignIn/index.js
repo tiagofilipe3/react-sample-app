@@ -1,19 +1,19 @@
 import React, { useState } from "react"
 import { Form, Formik } from "formik"
 
-import { ReactComponent as GoogleIcon } from "../assets/images/google_logo.svg"
-import Container from "../Container"
-import AutoRotatingCarousel from "../CustomCarousel/AutoRotatingCarousel"
-import Slide from "../CustomCarousel/Slide"
-import PeopleAndGraphs from "../PeopleAndGraphs"
-import FormattedText from "../FormattedText"
-import FormikTextField from "../FormikTextField"
+import { ReactComponent as GoogleIcon } from "../../assets/images/google_logo.svg"
+import Container from "../../components/Container"
+import AutoRotatingCarousel from "../../components/CustomCarousel/AutoRotatingCarousel"
+import Slide from "../../components/CustomCarousel/Slide"
+import PeopleAndGraphs from "../../components/PeopleAndGraphs"
+import FormattedText from "../../components/FormattedText"
+import FormikTextField from "../../components/FormikTextField"
 import Button from "@material-ui/core/Button"
-import Line from "../Line"
-import colors from "../assets/colors"
-import CreateAccountLink from "../CreateAccountLink"
-import LoginLink from "../LoginLink"
-import TermsLink from "../TermsLink"
+import Line from "../../components/Line"
+import colors from "../../assets/colors"
+import CreateAccountLink from "../../components/CreateAccountLink"
+import LoginLink from "../../components/LoginLink"
+import TermsLink from "../../components/TermsLink"
 
 const signInWithGoogleStyles = {
   backgroundColor: colors["primary-text"],
@@ -22,7 +22,7 @@ const signInWithGoogleStyles = {
   boxShadow: "0px 3px 6px #00000029",
 }
 
-const SignInPage = () => {
+const SignIn = () => {
   const [signUp, setSignUp] = useState(false)
 
   return (
@@ -220,4 +220,4 @@ const SignInPage = () => {
   )
 }
 
-export default SignInPage
+export default SignIn

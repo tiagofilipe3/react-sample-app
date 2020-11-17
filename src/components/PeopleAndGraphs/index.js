@@ -1,4 +1,4 @@
-import PeopleAndGraphsImg from "../assets/images/PeopleAndGraphs.png"
+import PeopleAndGraphsImg from "../../assets/images/PeopleAndGraphs.png"
 import React from "react"
 
 const imgStyles = {

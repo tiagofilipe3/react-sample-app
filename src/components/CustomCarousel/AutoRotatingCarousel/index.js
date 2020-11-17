@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { modulo } from "../../utils/modulo"
+import { modulo } from "../../../utils/modulo"
 import Carousel from "../SwipableCarouselView"
 import withStyles from "@material-ui/core/styles/withStyles"
 import PropTypes from "prop-types"

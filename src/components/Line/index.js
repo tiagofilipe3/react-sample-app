@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import PropTypes from "prop-types"
-import colors from "../assets/colors"
+import colors from "../../assets/colors"
 
 const Line = styled.div`
   height: 1px;
